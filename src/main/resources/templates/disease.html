@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Clinic</title>
+    <link rel = "stylesheet" type = "text/css" href = "medicalStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <link rel = "shortcut icon" href="favicon.png">
+
+    <!--    <a href='https://pl.freepik.com/wektory/sztandar'>Sztandar plik wektorowy utworzone przez starline - pl.freepik.com</a>-->
+
+</head>
+<body>
+    <div class = "headline">
+        <a th:href= "@{/}">
+            Medical Clinic
+        </a>
+    </div>
+    <div class = "search">
+        <form class = "searchPersonalize" action="#" method="get" style = "margin:auto; width: 300px;">
+            <div>
+                <input name = "q" type = "text" placeholder="Search disease... " required="required">
+            </div>
+        </form>
+    </div>
+    <div class = "space">
+
+    </div>
+    <div class ="aside">
+        <div class = "menu"><a th:href="@{/}">Menu</a></div>
+        <li><a th:href = "@{/}">Home</a></li>
+        <li><a th:href = "@{/patient}">Patient</a></li>
+        <li><a th:href = "@{/disease}">List of disease</a></li>
+        <li><a th:href = "@{/communication}">Communication</a></li>
+        <li><a th:href = "@{/aboutUs}">About us</a></li>
+
+    </div>
+    <div class = "container">
+        <div class ="bodyContainer">
+        <table class = "tab">
+            <tr th:each=" disease : ${di}">
+                <td th:text="${disease.getDisease()}"></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</body>
+</html>

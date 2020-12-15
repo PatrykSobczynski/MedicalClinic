@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Clinic</title>
+    <link rel = "stylesheet" type = "text/css" href = "medicalStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <link rel = "shortcut icon" href="favicon.png">
+
+    <!--    <a href='https://pl.freepik.com/wektory/sztandar'>Sztandar plik wektorowy utworzone przez starline - pl.freepik.com</a>-->
+
+</head>
+<body>
+    <div class = "headline">
+        <a th:href= "@{/}">
+            Medical Clinic
+        </a>
+    </div>
+    <div class = "space">
+
+    </div>
+    <div class ="aside">
+        <div class = "menu"><a th:href="@{/}">Menu</a></div>
+        <li><a th:href = "@{/}">Home</a></li>
+        <li><a th:href = "@{/patient}">Patient</a></li>
+        <li><a th:href = "@{/disease}">List of disease</a></li>
+        <li><a th:href = "@{/communication}">Communication</a></li>
+        <li><a th:href = "@{/aboutUs}">About us</a></li>
+    </div>
+    <div class = "container">
+        <div class ="headerContainer">
+            <H1>News</H1>
+        </div>
+        <div class ="bodyContainer">
+            <p>
+                Dear Patients! <br>
+                We would like to remind you that you need to register for the OCCUPATIONAL MEDICINE in advance.
+                A scan or a legible photo of the referral should be sent at least three days before the planned date of arrival in the attachment to the following address:
+                reception.med@medicalClinic.com
+                In the text of the message, please include: name, surname, PESEL number, home address, contact telephone number and an indication of the possible date of the examination.
+                You will receive the date and time of your visit to the clinic in your return email. <br>
+                Thank you
+                <br>
+                <br>
+            </p>
+            <p>
+                According to the position of the national consultant in the field of FAMILY MEDICINE of April 30, 2020.
+                concerning the carrying out of balance tests in children during the COVID-19 pandemic, in our PHC in May, first of all, balance sheets return during the annual compulsory pre-school preparation (the so-called 6-year-old balance sheet).
+                For the balance sheet audit: <br>
+                - must be made in advance <br>
+                - The first part of the study takes the form of teleconsultation <Br>
+                - II is an examination at the clinic, arranged by registration for a specific date <Br>
+                - one healthy guardian can come with a child <br>
+                - we come to the clinic at the appointed time, not earlier
+            </p>
+
+        </div>
+
+    </div>
+</body>
+</html>

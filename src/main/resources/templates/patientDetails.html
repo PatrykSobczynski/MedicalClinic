@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Clinic</title>
+    <link rel = "stylesheet" type = "text/css" href = "medicalStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <link rel = "shortcut icon" href="favicon.png">
+
+    <!--    <a href='https://pl.freepik.com/wektory/sztandar'>Sztandar plik wektorowy utworzone przez starline - pl.freepik.com</a>-->
+    <!--    <a href="https://www.flaticon.com">Icons made by flaticon.com</a>-->
+
+</head>
+<body>
+    <div class = "headline">
+        <a th:href= "@{/}">
+            Medical Clinic
+        </a>
+    </div>
+    <div class = "space">
+
+    </div>
+    <div class ="aside">
+        <div class = "menu"><a th:href="@{/}">Menu</a></div>
+        <li><a th:href = "@{/}">Home</a></li>
+        <li><a th:href = "@{/patient}">Patient</a></li>
+        <li><a th:href = "@{/disease}">List of disease</a></li>
+        <li><a th:href = "@{/communication}">Communication</a></li>
+        <li><a th:href = "@{/aboutUs}">About us</a></li>
+    </div>
+    <div class = "container" style = "margin:0px;">
+        <form th:action="@{/patient}">
+            <div class ="btn-back">
+                <input type="submit" value="Back to Patient List" class = btn-dark>
+            </div>
+        </form>
+        <div class ="detailsContainer">
+            <h2> Full Name: <a th:text="${p.getFullName()}"></a> </h2>
+            <h2> Age: <a th:text="${p.getAge()}"></a> </h2>
+            <h2> Disease: <a th:text="${p.getDisease()}"></a></h2>
+            <h2> Disease Description: <a th:text="${p.getDiseaseDescribe()}"></a></h2>
+            <h2> Bed Number: <a th:text="${p.getBedNumber()}"></a></h2>
+        </div>
+        <form th:action = "@{/patient{id}edit(id = ${p.getId()})}" method="get">
+            <div class ="buttonCSS">
+                <input type = "submit" value="Edit Details" class = "btn-dark">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
