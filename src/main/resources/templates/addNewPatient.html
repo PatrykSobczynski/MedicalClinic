@@ -36,6 +36,34 @@
                 <input type="submit" value="Back to Patient List" class = btn-dark>
             </div>
         </form>
+        </a>
+<!--      todo Trzeba zrobić tak, żeby odwoływać się do jednego elementu
+           po ID którego nie ma, bo dopiero będzie tworzone  -->
+        <form th:action="@{/patient/addPatient}" th:object="${pN}" method="post">
+            <div class ="detailsContainer">
+                <h2> Name:
+                    <input type="text">
+                </h2>
+                <h2> Surname:
+                    <input type="text">
+                </h2>
+                <h2> Age:
+                    <input type="text">
+                </h2>
+                <h2> Disease:
+                    <input type="text">
+                </h2>
+                <h2> Disease Description:
+                    <input type="text">
+                </h2>
+                <h2> Bed Number:
+                    <input type="text">
+                </h2>
+            </div>
+            <div class = "buttonCSS">
+                <input type="submit" value="ADD" class="btn-green">
+            </div>
+        </form>
     </div>
 </body>
 </html>

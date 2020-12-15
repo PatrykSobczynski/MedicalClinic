@@ -96,11 +96,11 @@ public class PatientDaoImpl implements PatientDao {
  *          POTRZEBNE TYLKO DO DODANIA W BAZIE DANYCH
  */
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void init() {
-        List<Patient> patientList = new ArrayList<>();
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void init() {
+//        List<Patient> patientList = new ArrayList<>();
 //
-        patientList.add(new Patient("Koń", "Rafał", 45, "Ból oczu", "-", 10));
+//        patientList.add(new Patient("Koń", "Rafał", 45, "Ból oczu", "-", 10));
 //        patientList.add(new Patient("Marta", "Gniazdo", 84,"Zawroty głowy","-", 11));
 //        patientList.add(new Patient("Dominika", "Nowak", 15,"Brak objawów", "-", 12));
 //        patientList.add(new Patient("Marcin", "Opara", 16,"Złamanie", "-", 13));
@@ -112,5 +112,5 @@ public class PatientDaoImpl implements PatientDao {
 //            String sql = "INSERT INTO clinic VALUES (null, ?, ?, ?, ?, ?,?)";
 //            jdbcTemplate.update(sql, patient.getName(), patient.getSurname(), patient.getAge(), patient.getDisease(), patient.getDiseaseDescribe(), patient.getBedNumber());
 //        }
-    }
+//    }
 }

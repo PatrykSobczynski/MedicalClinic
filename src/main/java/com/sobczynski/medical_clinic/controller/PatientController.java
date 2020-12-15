@@ -45,7 +45,7 @@ public class PatientController {
     }
 
     @PostMapping("/patient{id}/updateDetails")
-    public String changeDetails(@ModelAttribute Patient p) {
+    public String saveDetails(@ModelAttribute Patient p) {
         patientService.changeDetails(p);
         return "redirect:/patient{id}";
     }
@@ -56,16 +56,14 @@ public class PatientController {
         return "redirect:/patient";
     }
 
-    // todo Dodawanie pacjentów
     @GetMapping("/patientAddNewPatient")
-    public String newPatient(Model model) {
-        model.addAttribute("pN");
+    public String addPatient(Model model) {
+        model.addAttribute("pN", patientService.getPatients());
         return "addNewPatient";
     }
 
-    // todo Dodawania pacjentów przez przycisk
     @PostMapping("/patient/addPatient")
-    public String addPatient(@ModelAttribute Patient p) {
+    public String confirmAddPatient(@ModelAttribute Patient p) {
         patientService.addPatient(p);
         return "redirect:/patient";
     }
