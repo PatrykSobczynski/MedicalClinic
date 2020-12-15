@@ -59,6 +59,7 @@ public class PatientController {
     @GetMapping("/patientAddNewPatient")
     public String addPatient(Model model) {
         model.addAttribute("pN", patientService.getPatients());
+        model.addAttribute("newPatient", new Patient());
         return "addNewPatient";
     }
 

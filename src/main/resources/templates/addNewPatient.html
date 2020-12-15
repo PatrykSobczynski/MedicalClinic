@@ -37,27 +37,25 @@
             </div>
         </form>
         </a>
-<!--      todo Trzeba zrobić tak, żeby odwoływać się do jednego elementu
-           po ID którego nie ma, bo dopiero będzie tworzone  -->
-        <form th:action="@{/patient/addPatient}" th:object="${pN}" method="post">
+        <form th:action="@{/patient/addPatient}" th:object="${newPatient}" method="post">
             <div class ="detailsContainer">
                 <h2> Name:
-                    <input type="text">
+                    <input type="text" th:field="*{name}">
                 </h2>
                 <h2> Surname:
-                    <input type="text">
+                    <input type="text" th:field="*{surname}">
                 </h2>
                 <h2> Age:
-                    <input type="text">
+                    <input type="text" th:field="*{age}">
                 </h2>
                 <h2> Disease:
-                    <input type="text">
+                    <input type="text" th:field="*{disease}">
                 </h2>
                 <h2> Disease Description:
-                    <input type="text">
+                    <input type="text" th:field="*{diseaseDescribe}">
                 </h2>
                 <h2> Bed Number:
-                    <input type="text">
+                    <input type="text" th:field="*{bedNumber}">
                 </h2>
             </div>
             <div class = "buttonCSS">
