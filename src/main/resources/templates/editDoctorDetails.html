@@ -30,21 +30,34 @@
         <li><a th:href = "@{/doctors}">Doctors</a></li>
     </div>
     <div class = "container" style = "margin:0px;">
-        <form th:action="@{/patient}">
+        <form th:action="@{/doctors}">
             <div class ="btn-20">
-                <input type="submit" value="Back to Patient List" class = btn-dark>
+                <input type="submit" value="Back to Doctor List" class = btn-dark>
             </div>
         </form>
-        <div class ="detailsContainer">
-            <h2> Full Name: <a th:text="${p.getFullName()}"></a> </h2>
-            <h2> Age: <a th:text="${p.getAge()}"></a> </h2>
-            <h2> Disease: <a th:text="${p.getDisease()}"></a></h2>
-            <h2> Disease Description: <a th:text="${p.getDiseaseDescribe()}"></a></h2>
-            <h2> Bed Number: <a th:text="${p.getBedNumber()}"></a></h2>
-        </div>
-        <form th:action = "@{/patient{id}edit(id = ${p.getId()})}" method="get">
-            <div class ="buttonCSS">
-                <input type = "submit" value="Edit Details" class = "btn-dark">
+        <form th:action="@{/doctor{id}/updateDetails(id=${eD.getId()})}" th:object="${eD}" method="post">
+            <div class ="detailsContainer">
+                <h2> Name:
+                    <input type="text" th:field="*{name}">
+                </h2>
+                <h2> Surname:
+                    <input type="text" th:field="*{surname}">
+                </h2>
+                <h2> Specialization:
+                    <input type="text" th:field="*{specialization}">
+                </h2>
+                <h2> Phone number:
+                    <input type="text" th:field="*{numberOfPhone}">
+                </h2>
+            </div>
+            <div class = "buttonCSS">
+                <input type = "submit" value = "Save Changes" class = "btn-dark">
+            </div>
+        </form>
+        <form th:action="@{/doctor{id}/deleteDoctor(id=${eD.getId()})}" th:object="${eD}" method="post">
+            <div class = "buttonCSS">
+                <input type ="hidden" th:field="${eD}">
+                <button class ="btn-red" type = "submit" th:text="Delete" onclick="return confirm('Are you sure to delete this?')"></button>
             </div>
         </form>
     </div>

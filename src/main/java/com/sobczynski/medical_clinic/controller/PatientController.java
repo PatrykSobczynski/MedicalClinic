@@ -41,7 +41,7 @@ public class PatientController {
     @GetMapping("/patient{id}edit")
     public String editDetails(Model model, @PathVariable Long id) {
         model.addAttribute("pE", patientService.findPatientById(id));
-        return "editDetails";
+        return "editPatientDetails";
     }
 
     @PostMapping("/patient{id}/updateDetails")
@@ -78,16 +78,4 @@ public class PatientController {
         }
         return "disease";
     }
-
-
-
-    @GetMapping("/communication")
-    public String communication(Model model) {
-        return "communication";
-    }
-
-
-    // TODO: 15.12.2020  communication + aboutUs lub files
-    // TODO: 15.12.2020  dodawanie pacientów przez strone
-
 }

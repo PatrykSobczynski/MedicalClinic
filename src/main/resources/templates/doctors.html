@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Clinic</title>
+    <link rel = "stylesheet" type = "text/css" href = "medicalStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <link rel = "shortcut icon" href="favicon.png">
+
+    <!--    <a href='https://pl.freepik.com/wektory/sztandar'>Sztandar plik wektorowy utworzone przez starline - pl.freepik.com</a>-->
+
+</head>
+<body>
+    <div class = "headline">
+        <a th:href= "@{/}">
+            Medical Clinic
+        </a>
+    </div>
+    <div class = "space"></div>
+    <div class ="aside">
+        <div class = "menu"><a th:href="@{/}">Menu</a></div>
+        <li><a th:href = "@{/}">Home</a></li>
+        <li><a th:href = "@{/patient}">Patient</a></li>
+        <li><a th:href = "@{/disease}">List of disease</a></li>
+        <li><a th:href = "@{/communication}">Communication</a></li>
+    </div>
+    <div class = "">
+        <div class ="ContainerForTables">
+            <table class = "tab">
+                <thead>
+                <tr>
+                    <th> Name </th>
+                    <th> Specialization </th>
+                    <th> Number of phone </th>
+                    <th>
+                        <form th:action="@{/addNewDoctor}">
+                            <input type="submit" value = "Add new" class = "btn-green">
+                        </form>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each = "doctor : ${doctors}">
+                    <td th:text="${doctor.getFullName()}"></td>
+                    <td th:text="${doctor.getSpecialization()}"></td>
+                    <td th:text="${doctor.getNumberOfPhone()}"></td>
+                    <td>
+                        <form th:action="@{/editDoctorDetails{id}(id=${doctor.getId()})}" method="get">
+                            <input type="submit" value="Edit" class="btn-dark">
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

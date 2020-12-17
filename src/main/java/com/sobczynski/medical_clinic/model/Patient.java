@@ -18,6 +18,7 @@ public class Patient {
         this.age = age;
         this.disease = disease;
         this.diseaseDescribe = diseaseDescribe;
+        this.bedNumber = bedNumber;
     }
 
     public Patient(Long id, String name, String surname, int age, String disease, String diseaseDescribe, int bedNumber) {

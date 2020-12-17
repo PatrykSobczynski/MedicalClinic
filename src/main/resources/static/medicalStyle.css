@@ -39,9 +39,9 @@ body {
     text-align: center;
 }
 
-.ContainerForPatientList {
+.ContainerForTables {
     padding: 20px;
-    width: 40%;
+    width: 45%;
     margin: auto;
 }
 
@@ -100,7 +100,7 @@ a {
     border-color: #006725;
 }
 
-.btn-back {
+.btn-20 {
     margin-left: 20%;
 }
 

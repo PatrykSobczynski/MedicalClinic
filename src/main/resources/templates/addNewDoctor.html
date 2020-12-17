@@ -27,16 +27,16 @@
         <li><a th:href = "@{/}">Home</a></li>
         <li><a th:href = "@{/patient}">Patient</a></li>
         <li><a th:href = "@{/disease}">List of disease</a></li>
-        <li><a th:href = "@{/communication}">Communication</a></li>
-        <li><a th:href = "@{/aboutUs}">About us</a></li>
+        <li><a th:href = "@{/doctors}">Doctors</a></li>
     </div>
     <div class = "container" style = "margin:0px;">
-        <form th:action="@{/patient}">
-            <div class ="btn-back">
-                <input type="submit" value="Back to Patient List" class = btn-dark>
+        <form th:action="@{/doctors}">
+            <div class ="btn-20">
+                <input type="submit" value="Back to Doctor List" class = btn-dark>
             </div>
         </form>
-        <form th:action="@{/patient{id}/updateDetails(id=${pE.getId()})}" th:object="${pE}" method="post">
+        </a>
+        <form th:action="@{/doctor/addDoctor}" th:object="${newDoctor}" method="post">
             <div class ="detailsContainer">
                 <h2> Name:
                     <input type="text" th:field="*{name}">
@@ -44,27 +44,15 @@
                 <h2> Surname:
                     <input type="text" th:field="*{surname}">
                 </h2>
-                <h2> Age:
-                    <input type="text" th:field="*{age}">
+                <h2> Specialization:
+                    <input type="text" th:field="*{specialization}">
                 </h2>
-                <h2> Disease:
-                    <input type="text" th:field="*{disease}">
-                </h2>
-                <h2> Disease Description:
-                    <input type="text" th:field="*{diseaseDescribe}">
-                </h2>
-                <h2> Bed Number:
-                    <input type="text" th:field="*{bedNumber}">
+                <h2> Number of phone:
+                    <input type="text" th:field="*{numberOfPhone}">
                 </h2>
             </div>
             <div class = "buttonCSS">
-                <input type = "submit" value = "Save Changes" class = "btn-dark">
-            </div>
-        </form>
-        <form th:action="@{/patient{id}/deletePatient(id=${pE.getId()})}" th:object="${pE}" method="post">
-            <div class = "buttonCSS">
-                <input type ="hidden" th:field="${pE}">
-                <button class ="btn-red" type = "submit" th:text="Delete" onclick="return confirm('Are you sure to delete this?')"></button>
+                <input type="submit" value="ADD" class="btn-green">
             </div>
         </form>
     </div>
