@@ -66,7 +66,6 @@ public class DoctorDaoImpl implements DoctorDao {
 
     @Override
     public Doctor findDoctorById(Long id) {
-
         String sql = "SELECT * FROM doctors d WHERE d.ID = " + id;
         Doctor doctor = jdbcTemplate.queryForObject(sql, (resultSet, rowNum) ->
                 new Doctor(resultSet.getLong("id"),

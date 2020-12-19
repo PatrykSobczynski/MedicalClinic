@@ -22,16 +22,6 @@
             Medical Clinic
         </a>
     </div>
-    <div class = "search">
-        <form class = "searchPersonalize" action="#" method="get" style = "margin:auto; width: 300px;">
-            <div>
-                <input name = "q" type = "text" placeholder="Search Patient by surname... " required="required">
-            </div>
-        </form>
-    </div>
-    <div class = "space">
-
-    </div>
     <div class ="aside">
         <div class = "menu"><a th:href="@{/}">Menu</a></div>
         <li><a th:href = "@{/}">Home</a></li>
@@ -42,27 +32,31 @@
 
     </div>
     <div class = "ContainerForTables">
+
         <table class = "tab">
                 <thead>
                     <tr>
-                        <th> Name </th>
-                        <th> Age </th>
-                        <th> Disease </th>
+                        <th> Date of Visit: </th>
+                        <th> Patient: </th>
+                        <th> Doctor: </th>
                         <th>
-                            <form th:action="@{/patientAddNewPatient}">
+                            <form th:action="@{/addNewVisit}">
                                 <input type="submit" value = "Add new" class = "btn-green">
                             </form>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each = "patient : ${patients}">
-                        <td th:text="${patient.getFullName()}"></td>
-                        <td th:text="${patient.getAge()}"></td>
-                        <td th:text="${patient.getDisease()}"></td>
+                    <tr th:each = "visit : ${visits}">
+                        <td th:text="${visit.getDate().toLocaleString()}"></td>
+                        <td th:text="${visit.getPatient().surname}"></td>
+                        <td th:text="${visit.getDoctor().surname}"></td>
                         <td>
-                            <form th:action = "${patient.getDetails()}">
-                                <input type = "submit" value = "Details" class = "btn-dark">
+                            <form th:action="@{/visit{id}/deleteVisit(id=${visit.getId()})}" th:object="${visits}" method="post">
+                                <div>
+                                    <input type ="hidden" th:field="${visits}">
+                                    <button class ="btn-red" type = "submit" th:text="Delete" onclick="return confirm('Are you sure to delete this?')"></button>
+                                </div>
                             </form>
                         </td>
                     </tr>

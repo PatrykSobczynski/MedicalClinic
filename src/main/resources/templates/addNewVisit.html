@@ -31,25 +31,30 @@
         <li><a th:href = "@{/visit}">Visits</a></li>
     </div>
     <div class = "container" style = "margin:0px;">
-        <form th:action="@{/doctors}">
+        <form th:action="@{/visit}">
             <div class ="btn-20">
-                <input type="submit" value="Back to Doctor List" class = btn-dark>
+                <input type="submit" value="Back to Doctor List" class = "btn-dark">
             </div>
         </form>
         </a>
-        <form th:action="@{/doctor/addDoctor}" th:object="${newDoctor}" method="post">
+        <form th:action="@{/visit/addVisit}" th:object="${newVisit}" method="post">
             <div class ="detailsContainer">
-                <h2> Name:
-                    <input type="text" th:field="*{name}">
+                <h2> Date:
+                    <input type="date" th:field="*{date}">
                 </h2>
-                <h2> Surname:
-                    <input type="text" th:field="*{surname}">
+                <h2> Patient:
+                    <select id="patients" th:field="*{patient.id}" style="display: block; top: 25px;">
+                        <option th:each="patient : ${patients}"
+                                th:value="${patient.id}"><a th:text="${patient.fullName}" />
+                        </option>
+                    </select>
                 </h2>
-                <h2> Specialization:
-                    <input type="text" th:field="*{specialization}">
-                </h2>
-                <h2> Number of phone:
-                    <input type="text" th:field="*{numberOfPhone}">
+                <h2> Doctor:
+                    <select id="doctors" th:field="*{doctor.id}" style="display: block; top: 25px;">
+                        <option th:each="doctor : ${doctors}"
+                                th:value="${doctor.id}"><a th:text="${doctor.fullName}" />
+                        </option>
+                    </select>
                 </h2>
             </div>
             <div class = "buttonCSS">

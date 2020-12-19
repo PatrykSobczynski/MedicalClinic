@@ -1,5 +1,7 @@
 package com.sobczynski.medical_clinic.model;
 
+import java.sql.Date;
+
 public class Doctor {
     private Long id;
     private String name;
@@ -17,6 +19,12 @@ public class Doctor {
         this.specialization = specialization;
         this.numberOfPhone = numberOfPhone;
     }
+
+    public Doctor(Long id, String surname) {
+        this.id = id;
+        this.surname = surname;
+    }
+
 
     public String getFullName() {return name + " " + surname;}
     public String getName() { return name; }

@@ -78,10 +78,6 @@ public class PatientServiceImpl implements PatientService {
 //        patientList.add(new Patient("Maciej", "Borowieski", 6,"Złamanie", "-"));
 //        patientList.add(new Patient("Piotrek", "Borowieski", 9,"Skręcenie", "-"));
 //        patientList.add(new Patient("Wojtek", "Borowieski", 12,"Udar", "-"));
-//        patientList.add(new Patient("Wojtek", "Borowieski", 12,"Udar", "-"));
-//        patientList.add(new Patient("Wojtek", "Borowieski", 12,"Udar", "-"));
-//        patientList.add(new Patient("Wojtek", "Borowieski", 12,"Udar", "-"));
-//        patientList.add(new Patient("Wojtek", "Borowieski", 12,"Udar", "-"));
-//        patientList.add(new Patient("Wojtek", "Borowieski", 12,"Udar", "-"));
+
 //    }
 }

@@ -12,6 +12,11 @@ public class Patient {
     public Patient() {
     }
 
+    public Patient(Long id, String surname) {
+        this.id = id;
+        this.surname = surname;
+    }
+
     public Patient(String name, String surname, int age, String disease, String diseaseDescribe, int bedNumber) {
         this.name = name;
         this.surname = surname;
