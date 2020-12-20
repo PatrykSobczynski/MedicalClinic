@@ -4,6 +4,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Date;
 
 public class Visit {
@@ -30,7 +34,7 @@ public class Visit {
     public void setDate(String date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            this.dateVisit = dateFormat.parse(date);
+            this.dateVisit = dateFormat.parse(String.valueOf(date));
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -48,7 +48,7 @@
                 </thead>
                 <tbody>
                     <tr th:each = "visit : ${visits}">
-                        <td th:text="${visit.getDate().toLocaleString()}"></td>
+                        <td th:text="${#dates.format(visit.date, 'dd-MM-yyyy')}"></td>
                         <td th:text="${visit.getPatient().surname}"></td>
                         <td th:text="${visit.getDoctor().surname}"></td>
                         <td>
